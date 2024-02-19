@@ -1,0 +1,23 @@
+services:
+#  server:
+#    build:
+#      context: .
+#      target: final
+#      dockerfile: FileParser/Dockerfile
+#    ports:
+#      - 8080:8080
+#    depends_on:
+#      rabbitmq:
+#        condition: service_healthy
+#        
+  rabbitmq:
+    container_name: XmlWorker-rabbitmq
+    image: rabbitmq:3-management
+    ports:
+      - 5672:5672
+      - 15672:15672
+    healthcheck:
+      test: rabbitmq-diagnostics -q listeners
+      interval: 3s
+      timeout: 10s
+      retries: 60
