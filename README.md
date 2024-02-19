@@ -12,7 +12,7 @@
 - Скачать данный репозиторий
 - В консоле ввести команду:
   ```
-  docker-compose up --build
+  docker-compose up
   ```
 - Дождаться, пока сервис RabbitMq запуститься
 - Включить FileParser сервис
